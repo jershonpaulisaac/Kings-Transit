@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Share Live Location</title>
+  <link rel="stylesheet" href="share-location.css" />
+</head>
+<body>
+  <a href="home.html" id="home-btn">🏠 Home</a>
+
+  <div class="container">
+    <h1>Faculty Live Location Sharing</h1>
+
+    <!-- STEP 1: Password Section -->
+    <div id="auth-section">
+      <label for="auth">Enter Faculty Password:</label>
+      <input type="password" id="auth" placeholder="Enter secure faculty password" required />
+      <button onclick="verifyPassword()">Continue</button>
+      <p id="auth-status"></p>
+    </div>
+
+    <!-- STEP 2: Location Form (Hidden by Default) -->
+    <form id="locationForm" style="display: none;">
+      <label for="route">Select Route Number:</label>
+      <select id="route" required>
+        <option value="">-- Select Route --</option>
+        <option value="02">Route 02</option>
+        <option value="03">Route 03</option>
+        <option value="04">Route 04</option>
+        <option value="05">Route 05</option>
+        <option value="06">Route 06</option>
+        <option value="08">Route 08</option>
+        <option value="09">Route 09</option>
+        <option value="10">Route 10</option>
+        <option value="11">Route 11</option>
+        <option value="12">Route 12</option>
+        <option value="14">Route 14</option>
+        <option value="15">Route 15</option>
+        <option value="16">Route 16</option>
+        <option value="17">Route 17</option>
+        <option value="18">Route 18</option>
+        <option value="19">Route 19</option>
+        <option value="20">Route 20</option>
+        <option value="21">Route 21</option>
+        <option value="22">Route 22</option>
+        <option value="23">Route 23</option>
+        <option value="24">Route 24</option>
+        <option value="25">Route 25</option>
+        <option value="26">Route 26</option>
+        <option value="27">Route 27</option>
+        <option value="28">Route 28</option>
+        <option value="29">Route 29</option>
+        <option value="30">Route 30</option>
+        <option value="31">Route 31</option>
+      </select>
+
+      <label for="link">Paste Google Maps Live Location Link:</label>
+      <input type="url" id="link" placeholder="https://maps.app.goo.gl/..." required />
+
+      <button type="submit">Submit</button>
+      <p id="status"></p>
+     
+    </form>
+    
+
+  </div>
+
+  <script src="share-location.js"></script>
+</body>
+</html>

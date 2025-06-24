@@ -1,0 +1,68 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f8fc;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.drivers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.driver-card {
+  background: white;
+  border-radius: 10px;
+  width: 260px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.driver-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.driver-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #007bff;
+}
+
+.driver-card p {
+  margin: 4px 0;
+  color: #555;
+  font-size: 14px;
+}
+#home-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#home-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004099);
+  transform: scale(1.05);
+}
