@@ -8,34 +8,34 @@ const routeNumbers = [
 ];
 
 const studentData = {
-  '02': ['Alice Johnson', 'Brian Smith'],
-  '03': ['Carla Miller', 'David Lee'],
-  '04': ['Emily Davis', 'Frank Moore'],
-  '05': ['Grace Clark', 'Henry Lewis'],
-  '06': ['Isla Young', 'Jack Hall'],
-  '08': ['Kara Allen', 'Liam Scott'],
-  '09': ['Mia Adams', 'Noah Baker'],
-  '10': ['Olivia Perez', 'Paul Turner'],
-  '11': ['Quinn Hill', 'Ruby Mitchell'],
-  '12': ['Sam Carter', 'Tina Ward'],
-  '14': ['Umar Foster', 'Vera Graham'],
-  '15': ['Will Knight', 'Xena Brooks'],
-  '16': ['Yuri Ross', 'Zoe Price'],
-  '17': ['Aaron Reed', 'Bella Cook'],
-  '18': ['Caleb Murphy', 'Diana Rivera'],
-  '19': ['Ethan Bell', 'Fiona Kelly'],
-  '20': ['Gavin Cox', 'Hailey Hayes'],
-  '21': ['Ian Bryant', 'Jade Powell'],
-  '22': ['Kevin Barnes', 'Laura Peterson'],
-  '23': ['Mason Simmons', 'Nina Jenkins'],
-  '24': ['Oscar Webb', 'Piper Fuller'],
-  '25': ['Quincy Matthews', 'Riley Harper'],
-  '26': ['Sophie Howell', 'Tyler Kennedy'],
-  '27': ['Uma Stephens', 'Victor Black'],
-  '28': ['Wendy Dean', 'Xander Boyd'],
-  '29': ['Yasmine Holt', 'Zack Butler'],
-  '30': ['Abby George', 'Ben Wheeler'],
-  '31': ['Cindy Andrews', 'Derek Ryan']
+  '02': ['Abdul', 'Hemanth'],
+  '03': ['Mahadevan', 'Arjun'],
+  '04': ['Allan', 'Danny'],
+  '05': ['Alex', 'Joseph'],
+  '06': ['Jeberson', 'Madesh'],
+  '08': ['Jegadeesh', 'Harish'],
+  '09': ['Jemil', 'Kumaran'],
+  '10': ['Ajay', 'Kamesh'],
+  '11': ['Madhan', 'Gabriel'],
+  '12': ['Harjith', 'Dharun'],
+  '14': ['Gokul B', 'Jagadeeshwaran'],
+  '15': ['Gokul G', 'Mohammed'],
+  '16': ['Mohan', 'Ronaldo'],
+  '17': ['Bhuvanesh', 'Karthick'],
+  '18': ['Jershon', 'Kavin'],
+  '19': ['Joyson', 'Kishore'],
+  '20': ['Dharanesh', 'Ranesh'],
+  '21': ['Yogesh', 'Arun'],
+  '22': ['Saravanan', 'Lenin'],
+  '23': ['Solomon', 'Berson'],
+  '24': ['Jowil', 'Joshua'],
+  '25': ['Sam', 'Gladson'],
+  '26': ['Jebarin', 'Hebron'],
+  '27': ['Blessing', 'Seemar'],
+  '28': ['Kevin', 'Lorin'],
+  '29': ['Santhosh', 'Lipton'],
+  '30': ['Paul', 'Rohith'],
+  '31': ['Rithish', 'Raja']
 };
 
 const allAttendance = {};
@@ -162,24 +162,47 @@ const updateStatusTable = (studentName, status) => {
   } else {
     allAttendance[currentRoute].push({ name: studentName, status, time: currentTime });
   }
+  
 
-  const routeKey = currentRoute.split(' ')[1];
-  const total = studentData[routeKey].length;
-  const recorded = allAttendance[currentRoute]?.length || 0;
-  const busButtons = document.querySelectorAll('.bus-button');
-
-  busButtons.forEach(btn => {
-    if (btn.textContent === currentRoute) {
-      if (recorded === total) {
-        btn.classList.add('active-bus');
-      } else {
-        btn.classList.remove('active-bus');
-      }
-    }
+  sendToGoogleSheet({
+  name: studentName,
+  route: currentRoute.replace("Route ", ""), // e.g. "14"
+  status,
+  date: new Date().toLocaleDateString(),
+  time: currentTime
   });
 
-  // ✅ Show download button after any attendance
-  document.getElementById('download-container').style.display = 'block';
+  // ✅ Turn button green when all students are marked
+const routeKey = currentRoute.split(' ')[1]; // "02", etc.
+const total = studentData[routeKey]?.length || 0;
+const recorded = allAttendance[currentRoute]?.length || 0;
+
+const busButtons = document.querySelectorAll('.bus-button');
+busButtons.forEach(btn => {
+  if (btn.textContent === currentRoute) {
+    if (recorded === total) {
+      btn.classList.add('active-bus');
+    } else {
+      btn.classList.remove('active-bus');
+    }
+  }
+});
+// ✅ Show tick mark near student name
+const studentElements = document.querySelectorAll('.student');
+studentElements.forEach(student => {
+  if (student.querySelector('span')?.textContent === studentName) {
+    // Add ✅ only once
+    const nameSpan = student.querySelector('span');
+    if (!nameSpan.textContent.includes('✅')) {
+      nameSpan.textContent += ' ✅';
+    }
+  }
+});
+
+
+  // ✅ Fix: avoid optional chaining in assignment
+  const downloadDiv = document.getElementById('download-container');
+  if (downloadDiv) downloadDiv.style.display = 'block';
 };
 
 routeNumbers.forEach(route => {
@@ -190,17 +213,6 @@ routeNumbers.forEach(route => {
   btn.addEventListener('click', () => {
     const students = generateStudents(route);
     renderStudents(students);
-
-    const routeKey = `Route ${route}`;
-    const attendanceList = allAttendance[routeKey] || [];
-    const totalStudents = studentData[route]?.length || 0;
-    const markedCount = attendanceList.length;
-
-    if (markedCount === totalStudents) {
-      btn.classList.add('active-bus');
-    } else {
-      btn.classList.remove('active-bus');
-    }
   });
 
   busButtonsContainer.appendChild(btn);
@@ -221,4 +233,20 @@ function downloadAttendance() {
   const now = new Date();
   const filename = `Attendance_${now.toLocaleDateString().replace(/\//g, '-')}.xlsx`;
   XLSX.writeFile(wb, filename);
+}
+function sendToGoogleSheet({ name, route, status, date, time }) {
+  fetch("https://script.google.com/macros/s/AKfycbwWV0czjMGgT0bZPZpqfvXpOjFXMTFki7FrstxAN_P7rdZR2GmGTQu7wo9TX5tBkTyv/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name,
+      route,
+      status,
+      date,
+      time
+    })
+  });
 }

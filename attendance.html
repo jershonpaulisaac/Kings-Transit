@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bus Attendance</title>
   <link rel="stylesheet" href="attendance.css">
 </head>
 <body>
   <a href="home.html" id="home-btn">🏠 Home</a>
-
   <h1>Bus Attendance Page</h1>
+  
   <div id="bus-buttons"></div>
   <div id="attendance"></div>
-  <script src="attendance.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
- <div id="download-container" style="display: none;">
-  <button class="download-btn" onclick="downloadAttendance()">Download Attendance Excel</button>
-</div>
 
+  <!-- Hidden initially -->
+  <div id="download-container" style="display: none;">
+    <button class="download-btn" onclick="downloadAttendance()">Download Attendance Excel</button>
+  </div>
+
+  <!-- Libraries and scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="attendance.js"></script>
 </body>
 </html>
