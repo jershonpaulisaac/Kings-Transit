@@ -459,8 +459,8 @@ const routes = {
         "8.15"
       ]
     ],
-    "driver": "MR.VENKATRAMAN (N/A)",
-    "faculty": "Mr. ANANTHARAJ (N/A)"
+    "driver": "MR.VENKATRAMAN (8825558683)",
+    "faculty": "Mr. ANANTHARAJ (7667260065)"
   },
   "09": {
     "name": "TNENAMPET",
@@ -597,7 +597,7 @@ const routes = {
     "faculty": "Mrs. JASMINE MARGRET (9884886927)"
   },
   "11": {
-    "name": "S NO",
+    "name": "VEEPAMPATTU",
     "places": [
       [
         "1",
@@ -711,7 +711,7 @@ const routes = {
     "faculty": "Mr. MUTHUPANDI (9994019219)"
   },
   "14": {
-    "name": "S.NO",
+    "name": "MATHAVARAM",
     "places": [
       [
         "1",
@@ -779,11 +779,11 @@ const routes = {
         "8.20"
       ]
     ],
-    "driver": "MR.SANKAR (N/A)",
-    "faculty": "Ms.VILMA VERONICA (N/A)"
+    "driver": "MR.SANKAR (8680040704)",
+    "faculty": "Ms.VILMA VERONICA (7358512481)"
   },
   "15": {
-    "name": "S.NO",
+    "name": "THIRUVOTTIYUR",
     "places": [
       [
         "1",
@@ -895,7 +895,7 @@ const routes = {
     "faculty": "Dr. RAJALAKSHMI (9840248842)"
   },
   "16": {
-    "name": "POINT :EACHANKADU",
+    "name": "EACHANKADU",
     "places": [
       [
         "1",
@@ -967,7 +967,7 @@ const routes = {
     "faculty": "Dr.ELBERIN MARY THERAS (9444544223)"
   },
   "17": {
-    "name": "S.NO",
+    "name": "PALAVAKKAM",
     "places": [
       [
         "1",
@@ -1044,7 +1044,7 @@ const routes = {
     "faculty": "Dr. PARIVENDHAN (9884452627)"
   },
   "18": {
-    "name": "S NO",
+    "name": "THIRUVOTTIYUR",
     "places": [
       [
         "1",
@@ -1176,7 +1176,7 @@ const routes = {
     "faculty": "Dr.UDHAYABANU (9344867563)"
   },
   "19": {
-    "name": "S.NO",
+    "name": "MANALI",
     "places": [
       [
         "1",
@@ -1259,11 +1259,11 @@ const routes = {
         "8.20"
       ]
     ],
-    "driver": "MR.NAVEEN (N/A)",
-    "faculty": "Ms.MARY LALITHA (N/A)"
+    "driver": "MR.NAVEEN (6380963537)",
+    "faculty": "Ms.MARY LALITHA (7092543587)"
   },
   "20": {
-    "name": "S.NO",
+    "name": "AYANKULAM (KANCHIPURAM)",
     "places": [
       [
         "1",
@@ -1462,7 +1462,7 @@ const routes = {
     "faculty": "Mr. SARAVANAN (9841101246)"
   },
   "22": {
-    "name": "S.NO",
+    "name": "AARCOT (WALAJAPET)",
     "places": [
       [
         "1",
@@ -1534,7 +1534,7 @@ const routes = {
     "faculty": "Miss. SOWMIYA (9043619016)"
   },
   "23": {
-    "name": "S.NO",
+    "name": "GANDHI NAGAR (RED HILLS)",
     "places": [
       [
         "1",
@@ -1630,11 +1630,6 @@ const routes = {
         "19",
         "KEC",
         "8.20"
-      ],
-      [
-        "9940249112",
-        "FACULTY IN-CHARGE:Mr.PRINCE",
-        "8608371343.00"
       ]
     ],
     "driver": "MR.RANJITH KUMAR (9940249112)",
@@ -1688,7 +1683,7 @@ const routes = {
     "faculty": "Mrs. VIDHYA (9597416297)"
   },
   "25": {
-    "name": "S NO",
+    "name": "MEDAVAKKAM KOOT ROAD",
     "places": [
       [
         "1",
@@ -1940,8 +1935,8 @@ const routes = {
         "8.20"
       ]
     ],
-    "driver": "Mr.RAJESH (N/A)",
-    "faculty": "Dr.DURAIVEL (N/A)"
+    "driver": "Mr.RAJESH (8489008833)",
+    "faculty": "Dr.DURAIVEL (8667234146)"
   },
   "28": {
     "name": "TRIPILICANE",
@@ -2026,7 +2021,7 @@ const routes = {
     "faculty": "Dr. RAVICHANDRAN (9994118560)"
   },
   "29": {
-    "name": "S NO",
+    "name": "ARAKONAM",
     "places": [
       [
         "1",
@@ -2307,6 +2302,7 @@ const routes = {
     "faculty": "Dr. SENTHIL KUMAR (9944649345)"
   }
 };
+
 
 function createRouteCard(routeNo, route) {
   const card = document.createElement('div');
