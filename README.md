@@ -1,6 +1,5 @@
-# 🚌 KEC Bus Portal – Kings Engineering College
-
-A complete web portal designed for managing Kings Engineering College's daily bus operations, including:
+# 🚌 Kings Transit
+A Smart Bus Attendance and Tracking System for Kings Engineering College, including:
 
 ## ✨ Features
 
