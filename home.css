@@ -5,20 +5,26 @@ body {
   color: #333;
 }
 
-.hero {
-  text-align: center;
-  padding: 4rem 2rem 2rem;
-  background: linear-gradient(120deg, #0072ff, #00c6ff);
+.header {
+  background-color: #2c3e50;
   color: white;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.1rem;  /* reduce bottom space */
+  text-align: center;
+  padding: 30px 20px;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 0;          /* remove default top margin */
+.logo {
+  max-width: 140px;
+  margin-bottom: 15px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
 }
 
 
@@ -32,9 +38,9 @@ body {
 }
 
 .cta-btn {
-  background: #004d99;
+  background:  #6a2837da;
   color: white;
-  padding: 14px 28px;
+  padding: 20px 5px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 600;
@@ -44,17 +50,18 @@ body {
   width: 100%;
   max-width: 300px;
   text-align: center;
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.3);
 }
 
 .cta-btn:hover {
-  background: #0066cc;
+  background: #cf1111c0;
   transform: scale(1.05);
 }
 
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: #004d99;
+  background-color:  #2c3e50;
   color: white;
   font-size: 14px;
   line-height: 1.6;

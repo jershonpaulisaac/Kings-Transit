@@ -13,35 +13,50 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #2c3e50;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
+  
 }
-
 #bus-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  max-width: 800px;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 5% 10%;
+  font-size: 50px;
 }
 
-#bus-buttons button {
-  background-color: #007bff;
-  color: white;
+.bus-button {
+  padding: 16px 32px;
+ background: linear-gradient(135deg, #382357d9, #4361ee);
+
   border: none;
-  padding: 10px 20px;
-  font-size: 14px;
-  border-radius: 6px;
+  border-radius: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(67, 97, 238, 0.3);
 }
 
-#bus-buttons button:hover {
-  background-color: #0056b3;
+.bus-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(67, 97, 238, 0.4);
 }
 
-#bus-buttons button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
+.bus-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.4);
 }
+
+
+.bus-button:active {
+  transform: scale(0.96);
+} 
+
 .container form {
   display: flex;
   flex-direction: column;

@@ -9,6 +9,8 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 50px;
 }
 
 .route-buttons {
@@ -20,19 +22,25 @@ h1 {
 }
 
 .route-buttons button {
-  background-color: #007bff;
-  color: white;
-  border: none;
   padding: 10px 20px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #254050c1, #252222a6);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .route-buttons button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
+}
+.route-buttons:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(41, 128, 185, 0.4);
 }
 
 .route-card {
